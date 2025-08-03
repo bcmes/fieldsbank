@@ -1,0 +1,12 @@
+spring:
+    mvc:
+        servlet:
+            path: /fieldsbank # prefix for all endpoints created by this application
+    application:
+        name: fieldsbank
+    datasource:
+        url: jdbc:mysql://localhost:3306/fieldsbank
+        username: root
+        password: # leave empty if using docker-compose with MYSQL_ALLOW_EMPTY_PASSWORD
+    jpa:
+        open-in-view: false

@@ -1,0 +1,15 @@
+services:
+    mysql:
+        image: mysql:8.0
+        container_name: mysql
+        restart: always
+        environment:
+            MYSQL_DATABASE: fieldsbank # Vai criar uma base de dados chamado fieldsbank
+            MYSQL_ALLOW_EMPTY_PASSWORD: true
+        ports:
+            - "3306:3306"
+        volumes:
+            - ./db-scripts:/docker-entrypoint-initdb.d
+            - db_data:/var/lib/mysql
+volumes:
+    db_data:
